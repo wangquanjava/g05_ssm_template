@@ -12,7 +12,7 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<p class="pre-scrollable ">这是首页</p>
+		<p class="pre-scrollable ">这是首页 </p>
 		
 	</body>
 	
