@@ -15,7 +15,7 @@ public class DemoController {
 	
 	@RequestMapping("get")
 	public ResponseEntity<AjaxJson> get(){
-		return ResponseEntity.status(200).body(null);
+		return ResponseEntity.status(200).body(new AjaxJson(true,"success",null));
 	}
 	
 }

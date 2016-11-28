@@ -5,7 +5,8 @@ import java.util.Map;
 public class AjaxJson {
 	private Boolean success;
 	private String msg;
-	private Map<String, Object> data;
+	private Object data;
+	private Map<String, Object> attributes;
 	
 	public Boolean getSuccess() {
 		return success;
@@ -19,13 +20,22 @@ public class AjaxJson {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	public Map<String, Object> getData() {
+	
+	public Object getData() {
 		return data;
 	}
-	public void setData(Map<String, Object> data) {
+	public void setData(Object data) {
 		this.data = data;
 	}
-	public AjaxJson(Boolean success, String msg, Map<String, Object> data) {
+	public Map<String, Object> getAttributes() {
+		return attributes;
+	}
+	public void setAttributes(Map<String, Object> attributes) {
+		this.attributes = attributes;
+	}
+	
+	
+	public AjaxJson(Boolean success, String msg, Object data) {
 		super();
 		this.success = success;
 		this.msg = msg;
