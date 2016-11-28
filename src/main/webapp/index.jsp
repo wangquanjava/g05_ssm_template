@@ -11,7 +11,8 @@
 		<link href="${webRoot }/css/bootstrap.css" rel="stylesheet" />
 		<title>Insert title here</title>
 	</head>
-	<body>
+	
+	<body class="container">
 		<p class="pre-scrollable ">这是首页 </p>
 		
 	</body>
