@@ -64,21 +64,18 @@
 	
 	
 	<!-- 在springmvc.xml中配置，用来统计controler的-->
-	<bean id="druid-stat-interceptor"
-		class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
+	<bean id="druidStatInterceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
 	</bean>
-	
-	<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut"
-		scope="prototype">
+	<bean id="jdkRegexpMethodPointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">
 		<property name="patterns">
 			<list>
 				<value>com.git.controller.*</value>
 			</list>
 		</property>
 	</bean>
-	
 	<aop:config>
-		<aop:advisor advice-ref="druid-stat-interceptor"
-			pointcut-ref="druid-stat-pointcut" />
+		<aop:advisor advice-ref="druidStatInterceptor"
+			pointcut-ref="jdkRegexpMethodPointcut" />
 	</aop:config>
+	
 </beans>
