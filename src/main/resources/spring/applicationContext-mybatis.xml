@@ -21,8 +21,7 @@
 	</bean>
 	
 	<!-- 加载配置文件-->
-	<bean
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<!-- 允许JVM参数覆盖 -->
 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
 		<!-- 忽略没有找到的资源文件 -->
@@ -81,6 +80,7 @@
 	</bean>
 	<tx:advice id="txAdvisor" transaction-manager="txManager">
 		<tx:attributes>
+			<!-- 默认：propagation="REQUIRED" read-only="false"-->
 			<tx:method name="refresh"/>
 			<tx:method name="update" />
 			<tx:method name="*" read-only="true"/>
