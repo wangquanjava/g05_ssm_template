@@ -64,7 +64,7 @@
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
 	
 	
-	<!-- 在springmvc.xml中配置，用来统计controler的-->
+	<!-- Druid用来统计controler的-->
 	<bean id="druidStatInterceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
 	</bean>
 	<bean id="jdkRegexpMethodPointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">

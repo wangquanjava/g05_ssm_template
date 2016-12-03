@@ -17,7 +17,7 @@
 	
 	<context:component-scan base-package="com.git.service" />
 	
-	<!--在applicationContext.xml中配置，统计service和dao-->
+	<!--Druid，统计service和dao-->
 	<bean id="druidStatInterceptor"	class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
 	</bean>
 	<bean id="jdkRegexpMethodPointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut"
@@ -32,4 +32,7 @@
 	<aop:config>
 		<aop:advisor advice-ref="druidStatInterceptor" pointcut-ref="jdkRegexpMethodPointcut" />
 	</aop:config>
+	
+	<!-- 非注解情况下获得spring对象 -->
+	<bean class="com.git.utils.SpringContextUtils" />
 </beans>
