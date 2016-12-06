@@ -80,10 +80,11 @@
 	</bean>
 	<tx:advice id="txAdvisor" transaction-manager="txManager">
 		<tx:attributes>
-			<!-- 默认：propagation="REQUIRED" read-only="false"-->
-			<tx:method name="refresh"/>
+			<!-- 默认：propagation="REQUIRED" read-only="false"，不能识别的都认为是读操作，不使用事务-->
+			<tx:method name="add"/>
+			<tx:method name="delete"/>
 			<tx:method name="update" />
-			<tx:method name="*" read-only="true"/>
+			<tx:method name="*" propagation="SUPPORTS" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
