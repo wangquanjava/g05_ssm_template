@@ -80,7 +80,7 @@
 	</bean>
 	<tx:advice id="txAdvisor" transaction-manager="txManager">
 		<tx:attributes>
-			<!-- 默认：propagation="REQUIRED" read-only="false"，不能识别的都认为是读操作，不使用事务-->
+			<!-- 默认：propagation="REQUIRED" read-only="false"，默认使用数据库的事务隔离级别 isolation="DEFAULT"(mysql默认是可重复读)。不能识别的都认为是读操作，不使用事务-->
 			<tx:method name="add"/>
 			<tx:method name="delete"/>
 			<tx:method name="update" />
