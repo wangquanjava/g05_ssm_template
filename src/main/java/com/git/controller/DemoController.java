@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.git.domain.AjaxJson;
+import com.git.domain.DemoEntity;
 import com.git.service.DemoService;
 
 @Controller
@@ -15,7 +16,7 @@ public class DemoController {
 	
 	@RequestMapping("get")
 	public ResponseEntity<AjaxJson> get(){
-		return ResponseEntity.status(200).body(new AjaxJson(true,"success",null));
+		return ResponseEntity.status(200).body(new AjaxJson(true,"success",new DemoEntity()));
 	}
 	
 }
