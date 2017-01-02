@@ -84,7 +84,8 @@
 			<tx:method name="add"/>
 			<tx:method name="delete"/>
 			<tx:method name="update" />
-			<tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="insert" />
+			<tx:method name="*" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>

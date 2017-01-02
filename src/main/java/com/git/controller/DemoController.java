@@ -18,5 +18,10 @@ public class DemoController {
 	public ResponseEntity<AjaxJson> get(){
 		return ResponseEntity.status(200).body(new AjaxJson(true,"success",new DemoEntity()));
 	}
+	@RequestMapping("insert")
+	public ResponseEntity<AjaxJson> insert(){
+		this.demoService.insert(new DemoEntity());
+		return ResponseEntity.status(200).body(new AjaxJson(true,"success",new DemoEntity()));
+	}
 	
 }
