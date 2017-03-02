@@ -117,10 +117,10 @@
 		
 		<!-- servlet相关开发包，servlet-api、jsp-api在tomcat中都存在了 -->
 		<dependency>
+			<!-- 这个不能设置为provided，不然会报出jstl错 -->
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>jstl</artifactId>
 			<version>1.2</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
