@@ -16,8 +16,8 @@
 		
 	</body>
 	
-	<script src="${webRoot }/js/bootstrap.js"></script>
 	<script src="${webRoot }/js/jquery.min.js"></script>
+	<script src="${webRoot }/js/bootstrap.js"></script>
 	<script>
 		
 	</script>
