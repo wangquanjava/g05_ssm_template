@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.git.domain.AjaxJson;
+import com.git.domain.BaseResponse;
 import com.google.gson.Gson;
 
 public class GlobeExceptionResolver implements HandlerExceptionResolver{
@@ -34,7 +34,7 @@ public class GlobeExceptionResolver implements HandlerExceptionResolver{
 	private ModelAndView processAjax(HttpServletResponse response) {
 		response.setHeader("Cache-Control", "no-store");
 		try {
-			response.getWriter().write(new Gson().toJson(new AjaxJson(false, "请求出错", null)));
+			response.getWriter().write(new Gson().toJson(BaseResponse.FAIL()));
 			response.getWriter().flush();
 		} catch (IOException e) {
 			e.printStackTrace();
